@@ -55,6 +55,7 @@ public class TranscationFragment extends Fragment {
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
+
         binding = FragmentTranscationBinding.inflate(inflater);
 
         viewModel = new ViewModelProvider(this).get(MainViewModel.class);
@@ -105,13 +106,13 @@ public class TranscationFragment extends Fragment {
                 } else if (tab.getText().toString().equals("Monthly")) {
                     Constant.SELECTED_TAB = Constant.MONTHLY;
                     updateDate();
-                }else if (tab.getText().toString().equals("Calender")) {
+                }/*else if (tab.getText().toString().equals("Calender")) {
                     Constant.SELECTED_TAB = Constant.CALENDER;
                 }else if (tab.getText().toString().equals("summary")) {
                     Constant.SELECTED_TAB = Constant.SUMMARY;
                 }else {
                     Constant.SELECTED_TAB = Constant.NOTES;
-                }
+                }*/
             }
 
             @Override

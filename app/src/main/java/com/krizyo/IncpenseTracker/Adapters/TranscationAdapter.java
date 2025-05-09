@@ -5,11 +5,13 @@ import android.app.DatePickerDialog;
 import android.content.Context;
 import android.content.DialogInterface;
 import android.content.res.ColorStateList;
+import android.graphics.Color;
 import android.graphics.drawable.ColorDrawable;
 import android.os.Build;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.TextView;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.RequiresApi;
@@ -65,13 +67,28 @@ public class TranscationAdapter extends RecyclerView.Adapter<TranscationAdapter.
             holder.binding.amount.setTextColor(context.getColor(R.color.red));
         }
 
+        holder.itemView.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+
+                AlertDialog noteDialog = new AlertDialog.Builder(context).create();
+                noteDialog.getWindow().setBackgroundDrawable(new ColorDrawable(ContextCompat.getColor(context,R.color.lightBlack)));
+                noteDialog.setTitle("Note:");
+                noteDialog.setMessage(transcations.get(position).getNote());
+
+                if (!(transcations.get(position).getNote().equals(null) || transcations.get(position).getNote().equals(""))){
+                    noteDialog.show();
+                }
+            }
+        });
+
         holder.itemView.setOnLongClickListener(new View.OnLongClickListener() {
             @Override
             public boolean onLongClick(View view) {
                 AlertDialog deleteDialog = new AlertDialog.Builder(context).create();
                 deleteDialog.getWindow().setBackgroundDrawable(new ColorDrawable(ContextCompat.getColor(context,R.color.lightBlack)));
                 deleteDialog.setTitle("Delete Transcation");
-                deleteDialog.setMessage("Are you sure to delete this transcation?");
+                deleteDialog.setMessage("Are you sure to delete this transcation ?");
 
                 deleteDialog.setButton(DialogInterface.BUTTON_POSITIVE, "Yes", new DialogInterface.OnClickListener() {
                     @Override

@@ -15,7 +15,7 @@
 
     </item>
 
-    <item
+    <!--<item
         android:id="@+id/accounts"
         android:icon="@drawable/ic_accounts"
         android:title="Accounts">
@@ -27,5 +27,6 @@
         android:icon="@drawable/ic_more"
         android:title="More">
 
-    </item>
+    </item>-->
+
 </menu>

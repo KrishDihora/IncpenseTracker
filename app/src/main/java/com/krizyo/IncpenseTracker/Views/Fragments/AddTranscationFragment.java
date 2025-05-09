@@ -49,6 +49,7 @@ public class AddTranscationFragment extends BottomSheetDialogFragment {
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
+
         binding = FragmentAddTranscationBinding.inflate(inflater);
 
         transcationModel = new TranscationModel();
@@ -118,7 +119,7 @@ public class AddTranscationFragment extends BottomSheetDialogFragment {
 
                 AlertDialog categorydialog = new AlertDialog.Builder(getContext()).create();
                 categorydialog.setView(dialogBinding.getRoot());
-                categorydialog.getWindow().setBackgroundDrawable(new ColorDrawable(ContextCompat.getColor(getContext(),R.color.white)));
+                categorydialog.getWindow().setBackgroundDrawable(new ColorDrawable(ContextCompat.getColor(getContext(),R.color.lightBlack)));
 
 
                 CategoryAdapter categoryAdapter = new CategoryAdapter(getContext(), Constant.categories, new CategoryAdapter.CategoryClickListener() {
@@ -142,7 +143,7 @@ public class AddTranscationFragment extends BottomSheetDialogFragment {
                 LayoutListDialogBinding dialogBinding = LayoutListDialogBinding.inflate(inflater);
                 AlertDialog accountDialog = new AlertDialog.Builder(getContext()).create();
                 accountDialog.setView(dialogBinding.getRoot());
-                accountDialog.getWindow().setBackgroundDrawable(new ColorDrawable(ContextCompat.getColor(getContext(),R.color.white)));
+                accountDialog.getWindow().setBackgroundDrawable(new ColorDrawable(ContextCompat.getColor(getContext(),R.color.lightBlack)));
 
                 ArrayList<AccountModel> accounts = new ArrayList<>();
                 accounts.add(new AccountModel(0,"Cash"));

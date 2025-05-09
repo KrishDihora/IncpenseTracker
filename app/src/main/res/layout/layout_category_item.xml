@@ -6,7 +6,7 @@
     android:layout_height="wrap_content"
     android:paddingTop="5dp"
     android:paddingBottom="5dp"
-    android:background="@color/white">
+    android:background="@color/lightBlack">
 
     <ImageView
         android:id="@+id/categoryIcon"
@@ -27,7 +27,7 @@
         android:layout_marginTop="5dp"
         android:text="Business"
         android:textStyle="bold"
-        android:textColor="@color/lightBlack"
+        android:textColor="@color/white"
         app:layout_constraintEnd_toEndOf="@id/categoryIcon"
         app:layout_constraintStart_toStartOf="@id/categoryIcon"
         app:layout_constraintTop_toBottomOf="@id/categoryIcon">
