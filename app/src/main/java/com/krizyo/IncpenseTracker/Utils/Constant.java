@@ -5,6 +5,8 @@ import com.krizyo.IncpenseTracker.R;
 
 import java.util.ArrayList;
 
+import kotlin.text.UStringsKt;
+
 public class Constant {
     public static String INCOME = "INCOME";
     public static String EXPENSE = "EXPENSE";
@@ -15,6 +17,8 @@ public class Constant {
     public static int SUMMARY = 3;
     public static int NOTES = 4;
     public static int SELECTED_TAB = 0;
+    public static int SELECTED_TAB_STATS = 0;
+    public static String SELECTED_STATS_TYPE = INCOME;
 
     public static ArrayList<CategoryModel> categories;
 

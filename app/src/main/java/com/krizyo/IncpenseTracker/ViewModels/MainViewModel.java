@@ -26,6 +26,7 @@ public class MainViewModel extends AndroidViewModel {
     Realm realm;
     Calendar calendar;
     public MutableLiveData<RealmResults<TranscationModel>> transcations = new MutableLiveData<>();
+    public MutableLiveData<RealmResults<TranscationModel>> categoryTranscations = new MutableLiveData<>();
     public MutableLiveData<Double> totalIncome = new MutableLiveData<>();
     public MutableLiveData<Double> totalExpense = new MutableLiveData<>();
     public MutableLiveData<Double> totalAmount = new MutableLiveData<>();
@@ -120,6 +121,46 @@ public class MainViewModel extends AndroidViewModel {
         totalExpense.setValue(expense);
         totalAmount.setValue(amount);
 
+
+    }
+
+    public void getTranscations(Calendar calendar,String type){
+
+        this.calendar=calendar;
+
+        calendar.set(Calendar.HOUR_OF_DAY,0);
+        calendar.set(Calendar.MINUTE,0);
+        calendar.set(Calendar.SECOND,0);
+        calendar.set(Calendar.MILLISECOND,0);
+
+        RealmResults<TranscationModel> transcationModels = null;
+
+
+        if(Constant.SELECTED_TAB_STATS == Constant.DAILY){
+
+            transcationModels = realm.where(TranscationModel.class)
+                    .greaterThanOrEqualTo("date",calendar.getTime())
+                    .lessThan("date",new Date(calendar.getTime().getTime() + (24*60*60*1000)))
+                    .equalTo("type",type)
+                    .findAll();
+
+        } else if (Constant.SELECTED_TAB_STATS == Constant.MONTHLY) {
+
+            calendar.set(Calendar.DAY_OF_MONTH,0);
+
+            Date startTime = calendar.getTime();
+            calendar.add(Calendar.MONTH,1);
+            Date endTime = calendar.getTime();
+
+            transcationModels = realm.where(TranscationModel.class)
+                    .greaterThanOrEqualTo("date",startTime)
+                    .lessThan("date",endTime)
+                    .equalTo("type",type)
+                    .findAll();
+
+        }
+
+        categoryTranscations.setValue(transcationModels);
 
     }
 
