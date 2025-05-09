@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="black">#FF000000</color>
+    <color name="white">#FFFFFFFF</color>
+
+    <color name="appColor">#2C3E50</color>
+    <color name="appColorDark">#355E7A</color>
+    <color name="rippleAppColor">#979DAD</color>
+
+    <color name="lightGreen">#50D356</color>
+    <color name="lightRed">#D9564C</color>
+    <color name="lightBlack">#454545</color>
+
+    <color name="green">#4CAF50</color>
+    <color name="red">#F44336</color>
+    <color name="orange">#FF5722</color>
+
+    <color name="category1">#4CAF50</color>
+    <color name="category2">#2C3E50</color>
+    <color name="category3">#9C27B0</color>
+    <color name="category4">#2196F3</color>
+    <color name="category5">#E91E63</color>
+    <color name="category6">#877606</color>
+
+    <color name="cashColor">#A8004175</color>
+    <color name="cardColor">#A8007502</color>
+    <color name="bankColor">#A8750033</color>
+    <color name="upiColor">#A9009688</color>
+    <color name="defaultColor">#A8303030</color>
+
+    <color name="h">#A84B4B4B</color>
+
+</resources>
