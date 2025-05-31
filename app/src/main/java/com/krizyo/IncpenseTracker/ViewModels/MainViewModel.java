@@ -136,7 +136,7 @@ public class MainViewModel extends AndroidViewModel {
         RealmResults<TranscationModel> transcationModels = null;
 
 
-        if(Constant.SELECTED_TAB_STATS == Constant.DAILY){
+        if(Constant.SELECTED_TAB == Constant.DAILY){
 
             transcationModels = realm.where(TranscationModel.class)
                     .greaterThanOrEqualTo("date",calendar.getTime())
@@ -144,7 +144,7 @@ public class MainViewModel extends AndroidViewModel {
                     .equalTo("type",type)
                     .findAll();
 
-        } else if (Constant.SELECTED_TAB_STATS == Constant.MONTHLY) {
+        } else if (Constant.SELECTED_TAB == Constant.MONTHLY) {
 
             calendar.set(Calendar.DAY_OF_MONTH,0);
 

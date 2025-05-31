@@ -64,6 +64,7 @@ public class TranscationFragment extends Fragment {
         Constant.setCategories();
 
         calendar = Calendar.getInstance();
+        Constant.SELECTED_TAB = Constant.DAILY;
         updateDate();
 
         binding.previousDateBtn.setOnClickListener(new View.OnClickListener() {

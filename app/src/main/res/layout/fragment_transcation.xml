@@ -217,8 +217,8 @@
         app:layout_constraintTop_toBottomOf="@id/linear"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintBottom_toBottomOf="parent"
-        tools:listitem="@layout/layout_transcation_row">
+        tools:listitem="@layout/layout_transcation_row"
+        app:layout_constraintBottom_toBottomOf="parent">
 
     </androidx.recyclerview.widget.RecyclerView>
 

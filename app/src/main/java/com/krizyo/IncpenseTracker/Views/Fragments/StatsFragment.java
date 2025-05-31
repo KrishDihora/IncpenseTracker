@@ -59,14 +59,15 @@ public class StatsFragment extends Fragment {
         viewModel = TranscationFragment.viewModel;
 
         calendar = Calendar.getInstance();
+        Constant.SELECTED_TAB = Constant.DAILY;
         updateDate();
 
         binding.previousDateBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                if (Constant.SELECTED_TAB_STATS == Constant.DAILY){
+                if (Constant.SELECTED_TAB == Constant.DAILY){
                     calendar.add(Calendar.DATE,-1);
-                } else if(Constant.SELECTED_TAB_STATS == Constant.MONTHLY) {
+                } else if(Constant.SELECTED_TAB == Constant.MONTHLY) {
                     calendar.add(Calendar.MONTH,-1);
                 }
                 updateDate();
@@ -76,9 +77,9 @@ public class StatsFragment extends Fragment {
         binding.nextDateBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                if (Constant.SELECTED_TAB_STATS == Constant.DAILY){
+                if (Constant.SELECTED_TAB == Constant.DAILY){
                     calendar.add(Calendar.DATE,1);
-                } else if(Constant.SELECTED_TAB_STATS == Constant.MONTHLY) {
+                } else if(Constant.SELECTED_TAB == Constant.MONTHLY) {
                     calendar.add(Calendar.MONTH,1);
                 }
                 updateDate();
@@ -89,10 +90,10 @@ public class StatsFragment extends Fragment {
             @Override
             public void onTabSelected(TabLayout.Tab tab) {
                 if (tab.getText().toString().equals("Daily")){
-                    Constant.SELECTED_TAB_STATS = Constant.DAILY;
+                    Constant.SELECTED_TAB = Constant.DAILY;
                     updateDate();
                 } else if (tab.getText().toString().equals("Monthly")) {
-                    Constant.SELECTED_TAB_STATS = Constant.MONTHLY;
+                    Constant.SELECTED_TAB = Constant.MONTHLY;
                     updateDate();
                 }
             }
@@ -118,6 +119,7 @@ public class StatsFragment extends Fragment {
                 binding.expenseBtn.setTextColor(getContext().getColor(R.color.black));
 
                 Constant.SELECTED_STATS_TYPE = Constant.INCOME;
+                updateDate();
             }
         });
 
@@ -131,6 +133,7 @@ public class StatsFragment extends Fragment {
                 binding.incomeBtn.setTextColor(getContext().getColor(R.color.black));
 
                 Constant.SELECTED_STATS_TYPE = Constant.EXPENSE;
+                updateDate();
             }
         });
 
@@ -185,10 +188,10 @@ public class StatsFragment extends Fragment {
     }
 
     void updateDate(){
-        if (Constant.SELECTED_TAB_STATS == Constant.DAILY){
+        if (Constant.SELECTED_TAB == Constant.DAILY){
             binding.currentDate.setText(Helper.formatDate(calendar.getTime()));
             viewModel.getTranscations(calendar,Constant.SELECTED_STATS_TYPE);
-        } else if(Constant.SELECTED_TAB_STATS == Constant.MONTHLY) {
+        } else if(Constant.SELECTED_TAB == Constant.MONTHLY) {
             binding.currentDate.setText(Helper.formatDateBymonth(calendar.getTime()));
             viewModel.getTranscations(calendar,Constant.SELECTED_STATS_TYPE);
         }
