@@ -6,3 +6,6 @@ This application is well-coded in Java, following the MVVM architecture, and inc
 The database used is MongoDB Realm, a NoSQL solution, for storing data locally.
 
 The first and latest version of this application has also been released - feel free to check it out.
+
+# Mockups
+[Incpense Tracker PDF](https://drive.google.com/file/d/1v9YKIvn60vTmXNEULk9UhYFMwg0rk7VY/view?usp=drive_link)
